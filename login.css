@@ -1,0 +1,28 @@
+	.container{
+		padding-top: 30px;
+	}
+	#form{
+	 border: 1px solid gray;
+    /* width: 50%; */
+    padding: 10px;
+    margin-left: 20%;
+    margin-right: 20%;
+	}
+	#login{
+  		text-align: center;
+    	color: green;
+  	}
+  	#formmail{
+  		width: 64%;
+    	margin-left: 17%;
+  	}
+  	#formpass{
+  		width: 64%;
+    	margin-left: 17%;
+  	}
+  	#formcheckbox{
+  		margin-left: 17%;
+  	}
+  	#submit{
+  		margin-left: 17%;
+  	}
