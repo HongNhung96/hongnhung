@@ -45,10 +45,20 @@
 	    margin-left: auto;
     margin-right: auto;
     display: block;
+
 }
 .btn-default-1{
 	margin-left: 35%;
 }
 .form-group{
 	width: 70%;
+}
+.img{
+	height: 220px;
+    border: 1px solid gray;
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+
 }

@@ -36,11 +36,14 @@
         </div>
         <div style="" class="panel-body" >
         	<div id="left" class="col-md-3">
-        		<img src="anh.jpg" alt="imageprofile">
+        	<div class="img">
+        		<a href="#"><img src="anh.jpg" alt="imageprofile"></img></a>
+        		<p style="text-align: center; padding: 5px">Click to select</p>
+        		</div>
         		<button type="button" class="btn btn-default-1" aria-label="Left Align">
 			  <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
 			</button>
-			<button type="button" class="btn btn-default" aria-label="Left Align">
+			<button type="button" class="btn btn-default" aria-label="Left Align" >
 			  <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
 			</button>
 			<h4>General Information</h4>
@@ -67,7 +70,7 @@
 			    <li><a href="#menu3">Change Password</a></li>
 			  </ul>
 
-			  <div class="tab-content">
+			  <div class="tab-content" style="padding: 12px">
 			    <div id="menu1" class="tab-pane fade in active">
 			    <div class="col-md-7">
 			      <h4>About Me</h4>
@@ -96,30 +99,46 @@
 			    </div>
 
 			    </div>
-			    <div id="menu2" class="tab-pane fade">
+			    <div id="menu2" class="tab-pane fade" >
 			      <div class="form-group" >
 				      <label for="username">Username:</label>
-				      <input type="username" class="form-control" id="username" placeholder="Huyen.trang" name="username" style="background: orange; text-align: center;">
+				      <input type="text" class="form-control" id="username" placeholder="Huyen.trang" name="username" style="background: orange; text-align: center;">
 				    </div>
 				    <div class="form-group">
 				      <label for="nickname">Nickname:</label>
-				      <input type="nickname" class="form-control" id="nickname" placeholder="huyền trang" name="nickname">
+				      <input type="text" class="form-control" id="nickname" placeholder="huyền trang" name="nickname">
 				    </div>
 				    <div class="form-group" >
 				      <label for="email">Email:</label>
 				      <input type="email" class="form-control" id="email" placeholder="tran.huyentran@jvb-corp.com" name="email">
 				    </div>
 				    <div class="form-group" >
-				      <label for="email">Email:</label>
-				      <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+				      <label for="fullname">Fullname:</label>
+				      <input type="text" class="form-control" id="fullname" placeholder="Trần Thị Huyền Trang" name="fullname">
 				    </div>
-				    <button type="submit" class="btn btn-default">Submit</button>
+				    <div class="form-group" >
+				      <label for="slogan">Slogan:</label>
+				      <textarea class="form-control" rows="5" id="slogan" placeholder="Trang xinh"></textarea>
+				    </div>
+				    <button type="submit" class="btn btn-default">Cập nhật</button>
 				  </form>
 
 
 			    </div>
 			    <div id="menu3" class="tab-pane fade">
-			      
+			    <p class="col-md-3" style="padding-left: 10px; margin-top: 8px;">Mật khẩu cũ:</p>
+			      	<div class="form-group col-md-5">
+					    <input type="password" class="form-control" id="oldpass" style="" >
+					  </div>
+					  <p class="col-md-3" style="padding-left: 10px; margin-top: 8px;">Mật khẩu mới:</p>
+			      	<div class="form-group col-md-5">
+					    <input type="password" class="form-control" id="newpass" style="" >
+					  </div>
+					  <p class="col-md-3" style="padding-left: 10px; margin-top: 8px;">Xác nhận mật khẩu:</p>
+			      	<div class="form-group col-md-5">
+					    <input type="password" class="form-control" id="checkpass" style="" >
+					  </div>
+					  <button type="submit" class="btn btn-default" style="margin-left: 50%; color: green">Lưu mật khẩu</button>
 			    </div>
 			  </div>
 			    <hr>
