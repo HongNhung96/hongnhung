@@ -7,31 +7,78 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="login.css">
+  
   <style type="text/css">
   </style>
 </head>
 <body>
 
 <div class="container">
+<div id="loginbox"  class="col-md-5 col-sm-12">                    
+            <div class="panel panel-info" >
+                    <div class="panel-heading">
+                        <div class="panel-title" style="text-align: center;">JVB System</div>
+                        
+                    </div>     
 
-<form id="form">
-	<h2 id="login">JVB System</h2>
-    <div class="form-group" id="formmail">
-      <label for="email">Email:</label>
-      <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
-    </div>
-    <div class="form-group" id="formpass">
-      <label for="pwd">Password:</label>
-      <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
-    </div>
-    <div class="checkbox" id="formcheckbox">
-      <label><input type="checkbox" name="remember" > Remember me</label>
-    </div>
-    <button type="submit" class="btn btn-default" id="submit">Submit</button>
-  </form>
-	
+                    <div style="padding-top:30px" class="panel-body" >
+
+                        <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
+                            
+                        <form id="loginform" class="form-horizontal" role="form">
+                                    
+                            <div style="margin-bottom: 25px" class="input-group">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                        <input id="username" type="text" class="form-control" name="username" value="" placeholder="Tên">                                        
+                                    </div>
+                                
+                            <div style="margin-bottom: 25px" class="input-group">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                                        <input id="password" type="password" class="form-control" name="password" placeholder="Mật khẩu">
+                                    </div>
+                                    
+
+                                
+                            <div class="input-group">
+                                      <div class="checkbox">
+                                      	<div class="col-md-12">
+                                          <input id="checkbox" type="checkbox" name="remember" value="1"> Ghi nhớ mật khẩu
+                                        </div>
+                                      </div>
+                                    </div>
+
+
+                                <div style="margin-top:10px; margin-left: 32%;" class="form-group">
+                                    <div class="col-sm-12 controls">
+                                      <a id="btn-login" href="#" class="btn btn-success" onclick="loginfunction()">Đăng nhập </a>
+                                    </div>
+                                </div>   
+                            </form>     
+                        </div>                     
+                    </div> 
+                </div>
 </div>
-</div>
+<script type="text/javascript">
+function loginfunction(){
+	var username=document.getElementById('username').value;
+	var password=document.getElementById('password').value;
+	var checkmail=/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+	if(username==''){
+		alert("Ban chua nhap email");
+	}
+	else if(password==''){
+		alert("Ban chua nhap password");
+	}
+	else if(!checkmail.test(username)){
+		alert("Hay nhap email hop le");
+	}
+	else{
+		alert("Thanh cong");
+	}
+}
+
+</script>
+
 </body>
 </html>
+
