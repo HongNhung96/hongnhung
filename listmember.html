@@ -1,0 +1,147 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>ListMembers</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="profile.css">
+  <style type="text/css">
+  </style>
+</head>
+<body>
+
+<div class="container">
+<div id="header">
+	<img src="jvb.png" alt="logojvb" id="logo"> 
+	<div id="tab">
+	<a href="#" class="col-md-1">Trang chủ</a>
+	<a href="#" class="col-md-1">Hồ sơ</a>
+	<a href="#" class="col-md-1">Thành viên</a>
+	<a href="#" class="col-md-2">Quản lý thời gian</a>
+	<a href="#" class="col-md-1">Nhóm</a>
+	<a href="#" class="col-md-1">Dự án</a>
+	<a href="#" class="col-md-1">Phòng họp</a>
+	<a href="#" class="col-md-1">Hỗ Trợ</a>
+	<a href="#" class="col-md-1">Nội quy</a>
+	</div>
+</div>
+<div id="center">
+	<div class="form-group" >
+		<input type="text" class="" id="search" placeholder="Nhập từ khóa và nhấn enter" name="search" style="width: 30%">
+		<button type="submit" class="btn btn-default" >Tìm kiếm</button>
+	</div>
+	
+	<div class="panel panel-info"  >
+        <div class="panel-heading" >
+            <div class="panel-title" style="text-align: center;">DANH SÁCH THÀNH VIÊN</div>
+                        
+        </div>
+        <div style="" class="panel-body" >
+    <form name="fcheck" id="fcheck">
+    <table class="table table-bordered" id="myTable">
+    <thead>
+        <tr>
+            <th><input type="checkbox" class="checkall" value="0" /></th>
+            <th>NHÓM</th>
+            <th>EMAIL</th>
+            <th>HỌ VÀ TÊN</th>
+            <TH>KHẨU HIỆU</TH>
+            <TH>VỊ TRÍ</TH>
+            <TH>TRẠNG THÁI</TH>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><input type="checkbox" class="chkitem" value="1" /></td>
+            <td>lập trình iOS</td>
+            <td>du.cuong@jvb-corp.com</td>
+            <td>Dư Đức Cường</td>
+            <td>12345</td>
+            <td>Members</td>
+            <td id="button1"><button type="button" class="btn btn-default active" id="button" value="Hoạt động">Hoạt động</button></td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" class="chkitem" value="2" /></td>
+            <td>lập trình iOS</td>
+            <td>du.cuong@jvb-corp.com</td>
+            <td>Dư Đức Cường</td>
+            <td>12345</td>
+            <td>Members</td>
+            <td id="button2"><button type="button" class="btn btn-default no-active" id="button" value="Không hoạt động">Không hoạt động</button></td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" class="chkitem" value="3" /></td>
+            <td>lập trình iOS</td>
+            <td>du.cuong@jvb-corp.com</td>
+            <td>Dư Đức Cường</td>
+            <td>12345</td>
+            <td>Members</td>
+            <td><button type="button" class="btn btn-default no-active" id="button">Không hoạt động</button></td>
+        </tr>
+    </tbody>
+</table>
+</form>
+<div class="btn-group" role="group" aria-label="...">
+  <button type="button" class="btn btn-default">1</button>
+  <button type="button" class="btn btn-default">2</button>
+  <button type="button" class="btn btn-default">3</button>
+</div>
+<script type="text/javascript">
+	$(function(){
+        /*Check & uncheck all*/
+        $(document).on('change', '.checkall', function(){
+            var $_this = $(this);
+            $('.chkitem').prop('checked', $_this.prop('checked'));
+        });
+        /*Check list item*/
+        $(document).on('change', '.chkitem', function(){
+            var $_this = $(this);
+            var $_checkedall = true;
+            $('.chkitem').each(function(){
+                if(!$(this).is(':checked')){
+                    $_checkedall = false;
+                }
+                $('.checkall').prop('checked', $_checkedall);
+            });
+        });
+    });
+    $(document).on('click', '.active', function(){
+			var text=$(this).val();
+			if(text=="Hoạt động"){
+				var r= confirm("Bạn có muốn chuyển trạng thái không?");
+				if(r==true){
+
+				 	$(this).attr('value', 'Không hoạt động');
+				 	$(this).html('Không hoạt động');
+					$(this).attr('class', 'btn btn-default no-active');
+				} else {
+					return false;
+				}
+			}	
+	 });
+	$(document).on('click', '.no-active', function(){
+			var text=$(this).val();
+			if(text=="Không hoạt động"){
+				var r= confirm("Bạn có muốn chuyển trạng thái không?");
+				if(r==true){
+
+					$(this).attr('value', 'Hoạt động');
+					$(this).html('Hoạt động');
+					$(this).attr('class', 'active');
+				} else {
+					return false;
+				}
+			}	
+	});
+</script>
+</div>
+
+</div>
+</div>
+</body>
+</html>
+
